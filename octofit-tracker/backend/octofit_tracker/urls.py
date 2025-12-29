@@ -38,6 +38,7 @@ router.register(r'workouts', WorkoutViewSet)
 
 @api_view(['GET'])
 def api_root(request, format=None):
+    # Always use HTTPS and the Codespace-aware base_url for API endpoints
     return Response({
         'users': f'{base_url}/api/users/',
         'teams': f'{base_url}/api/teams/',
